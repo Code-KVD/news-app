@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.secondary-navbar{
+   background: #99c2ee; 
+}
