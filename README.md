@@ -1,3 +1,13 @@
+# Hello Everyone!
+welcome to the news-app react project repository.
+This is one of my personal projects which is build using React.js
+
+# What motivated me for making this project?
+One day I was justing searching some new projects to make and I came across this API called newsAPI.
+So I thought of making a project which using this API by fetching latest news and displaying on the screen.
+With this a person can see all the latest news I one place.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
