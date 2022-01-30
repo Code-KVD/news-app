@@ -4,8 +4,8 @@ This is one of my personal projects which uses React.js
 
 # What motivated me for making this project?
 One day I was justing searching some new projects to make and I came across this API called newsAPI.
-So I thought of making a project which uses this API by fetching latest news and displaying on the screen.
-With this a person can see all the latest news I one place.
+So I thought of making a project which uses this API by fetching latest news and displaying them on the screen.
+With this a person can see all the latest news and events in one place.
 
 
 # Getting Started with Create React App
