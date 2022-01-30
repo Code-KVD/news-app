@@ -1,6 +1,6 @@
 # Hello Everyone!
 welcome to the news-app react project repository.
-This is one of my personal projects which is build using React.js
+This is one of my personal projects which uses React.js
 
 # What motivated me for making this project?
 One day I was justing searching some new projects to make and I came across this API called newsAPI.
