@@ -8,13 +8,22 @@ export default class NewsContainer extends Component {
             articles : [],
             pages : 1,
         };
+        
+        this.handlePreviousButton = this.handlePreviousButton.bind(this);
     }
+    
+    
     componentDidMount(){
-        let newsURL = "https://newsapi.org/v2/top-headlines?country=in&apiKey=b8737bb5f3be458988ac7a29f303a451"
+        let newsURL = "https://newsapi.org/v2/top-headlines?country=in&apiKey=b8737bb5f3be458988ac7a29f303a451&page=1"
         let newsData = fetch(newsURL);
         let parsedData = newsData.then((response)=>response.json()).then();
         parsedData.then((data)=> this.setState({articles:data.articles})); 
     }
+
+    handlePreviousButton(){
+        
+    }
+
     render() {
         return (
             <>
@@ -24,8 +33,8 @@ export default class NewsContainer extends Component {
             })}
             </div>
             <div className=" w-3/4 m-auto flex justify-between">
-                <button className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded">&larr;Previous</button>
-                <button className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded">Next&rarr;</button>
+                <button className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded" onClick={this.handlePreviousButton}>&larr;Previous</button>
+                <button className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded" onClick={this.handleNextButton}>Next&rarr;</button>
             </div>
             </>
         )

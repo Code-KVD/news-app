@@ -4,7 +4,6 @@ export default class SecondaryLinks extends Component {
   render() {
     return <div className="text-gray-200">
     <ul className='flex flex-col'>
-
         <li className='mx-2 p-2 my-1 cursor-pointer font-bold'>Breaking News</li>
         <li className='mx-2 p-2 my-1 cursor-pointer font-bold'>National</li>
         <li className='mx-2 p-2 my-1 cursor-pointer font-bold'>International</li>
