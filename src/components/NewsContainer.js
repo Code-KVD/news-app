@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
@@ -7,6 +6,7 @@ export default class NewsContainer extends Component {
         super();
         this.state = {
             articles : [],
+            pages : 1,
         };
     }
     componentDidMount(){
@@ -22,6 +22,10 @@ export default class NewsContainer extends Component {
             {this.state.articles.map((element)=>{
                 return <NewsItem key={element.url} title={element.title} imageUrl={element.urlToImage} newsUrl={element.url}/>
             })}
+            </div>
+            <div className=" w-3/4 m-auto flex justify-between">
+                <button className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded">&larr;Previous</button>
+                <button className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded">Next&rarr;</button>
             </div>
             </>
         )
