@@ -6,22 +6,36 @@ export default class NewsContainer extends Component {
         super();
         this.state = {
             articles : [],
-            pages : 1,
+            page : 1,
         };
         
         this.handlePreviousButton = this.handlePreviousButton.bind(this);
+        this.handleNextButton = this.handleNextButton.bind(this);
     }
     
     
     componentDidMount(){
-        let newsURL = "https://newsapi.org/v2/top-headlines?country=in&apiKey=b8737bb5f3be458988ac7a29f303a451&page=1"
+        let newsURL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=b8737bb5f3be458988ac7a29f303a451&page=${this.state.page}`
         let newsData = fetch(newsURL);
         let parsedData = newsData.then((response)=>response.json()).then();
         parsedData.then((data)=> this.setState({articles:data.articles})); 
-    }
 
+    }
+    // function which handles previous button.
     handlePreviousButton(){
-        
+        let newsURL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=b8737bb5f3be458988ac7a29f303a451&page=${this.state.page-1}`
+        let newsData = fetch(newsURL);
+        let parsedData = newsData.then((response)=>response.json()).then();
+        parsedData.then((data)=> this.setState({articles:data.articles})); 
+        this.setState({page:this.state.page-1});      
+    }
+    // function which handles next button.
+    handleNextButton(){
+        let newsURL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=b8737bb5f3be458988ac7a29f303a451&page=${this.state.page+1}`
+        let newsData = fetch(newsURL);
+        let parsedData = newsData.then((response)=>response.json()).then();
+        parsedData.then((data)=> this.setState({articles:data.articles})); 
+        this.setState({page:this.state.page+1});
     }
 
     render() {
@@ -33,8 +47,8 @@ export default class NewsContainer extends Component {
             })}
             </div>
             <div className=" w-3/4 m-auto flex justify-between">
-                <button className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded" onClick={this.handlePreviousButton}>&larr;Previous</button>
-                <button className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded" onClick={this.handleNextButton}>Next&rarr;</button>
+                <button disabled={this.state.page<=1} className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded" onClick={this.handlePreviousButton}>&larr;Previous</button>
+                <button disabled={this.state.page} className="mx-1.5 my-1.5 py-1.5 px-2 bg-blue-300 rounded" onClick={this.handleNextButton}>Next&rarr;</button>
             </div>
             </>
         )
