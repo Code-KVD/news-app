@@ -8,7 +8,7 @@ function App() {
    <>
      <Navbar/>
      <NewsContainer/>
-     <Footer/>
+     {/* <Footer/> */}
      
    </>
   );
